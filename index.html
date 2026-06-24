@@ -1,314 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molienda & Trigo | Café de Especialidad en Santa Cruz</title>
-    <style>
-        /* Variables de diseño - Paleta Cálida y Moderna */
-        :root {
-            --primary: #4A3525; /* Marrón café oscuro */
-            --accent: #D4A373;  /* Tono tostado/crema */
-            --light: #FAEDCD;   /* Fondo suave */
-            --dark: #1E1E1E;    /* Texto principal */
-            --white: #FFFFFF;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Origen & Terroir | Boutique de Café & Alta Repostería</title>
+<!-- Tipografías Elegantes desde Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1
+,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+--gold: #D4AF37; /* Oro noble */
+--gold-light: #F3E5AB; /* Crema de oro */
+--dark: #111111; /* Negro absoluto */
+--dark-soft: #1A1A1A; /* Negro suavizado */
+--white: #FFFFFF;
+--gray-light: #F9F9F9; /* Fondo galería */
+--text-muted: #888888;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: var(--white);
+color: var(--dark);
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .brand-font {
+font-family: 'Cormorant Garamond', serif;
+font-weight: 400;
+}
+/* Navbar Minimalista de Lujo */
+header {
+background-color: rgba(17, 17, 17, 0.95);
+padding: 1.8rem 4rem;
+position: sticky;
+top: 0;
+z-index: 1000;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+backdrop-filter: blur(10px);
+}
+.logo {
+color: var(--white);
+font-size: 1.8rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+text-decoration: none;
 
-        body {
-            color: var(--dark);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
+}
+.logo span {
+color: var(--gold);
+}
+nav a {
+text-decoration: none;
+color: var(--white);
+margin-left: 3rem;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-weight: 300;
+transition: color 0.4s ease;
+}
+nav a:hover {
+color: var(--gold);
+}
+/* Hero Editorial */
+.hero {
+background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&
+q=80&w=1600') no-repeat center center/cover;
+height: 95vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: var(--white);
+padding: 0 2rem;
+}
+.hero h1 {
+font-size: 5rem;
+line-height: 1.1;
+margin-bottom: 1.5rem;
+letter-spacing: 2px;
+}
+.hero h1 i {
+font-style: italic;
+color: var(--gold);
+}
 
-        /* Navbar */
-        header {
-            background-color: var(--white);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.hero p {
+font-size: 1.1rem;
+font-weight: 300;
+margin-bottom: 3rem;
+max-width: 700px;
+letter-spacing: 1px;
+color: #DDD;
+}
+/* Botón de Alta Costura */
+.btn-luxury {
+display: inline-block;
+border: 1px solid var(--gold);
+color: var(--white);
+padding: 1.2rem 3rem;
+text-decoration: none;
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 3px;
+transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+background: transparent;
+}
+.btn-luxury:hover {
+background-color: var(--gold);
+color: var(--dark);
+box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+}
+/* Bloque Storytelling (Experiencia) */
+.storytelling {
+padding: 10rem 2rem;
+background-color: var(--dark);
+color: var(--white);
+text-align: center;
+position: relative;
+}
+.storytelling .container {
+max-width: 850px;
+margin: 0 auto;
+}
+.storytelling .subtitle {
+color: var(--gold);
+text-transform: uppercase;
+letter-spacing: 4px;
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+font-size: 0.9rem;
+margin-bottom: 1.5rem;
+display: block;
+}
+.storytelling h2 {
+font-size: 3.5rem;
+margin-bottom: 2.5rem;
+line-height: 1.2;
+}
+.storytelling p {
+font-size: 1.2rem;
+font-weight: 300;
+color: #CCC;
+margin-bottom: 2rem;
+font-family: 'Cormorant Garamond', serif;
+font-style: italic;
+}
+/* Menú de Experiencias / Productos Exclusivos */
+.menu-section {
+padding: 10rem 4rem;
+background-color: var(--white);
+}
+.section-header {
+text-align: center;
+margin-bottom: 7rem;
+}
+.section-header span {
+text-transform: uppercase;
+letter-spacing: 5px;
+font-size: 0.85rem;
+color: var(--text-muted);
+display: block;
+margin-bottom: 1rem;
+}
+.section-header h2 {
+font-size: 4rem;
+color: var(--dark);
+}
+/* Cuadrícula Asimétrica y Elegante */
+.grid-luxury {
+display: grid;
 
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+grid-template-columns: repeat(2, 1fr);
+gap: 6rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+.product-item {
+background: var(--white);
+transition: all 0.4s ease;
+}
+.image-wrapper {
+overflow: hidden;
+position: relative;
+margin-bottom: 2rem;
+background-color: var(--gray-light);
+}
+.product-img {
+width: 100%;
+height: 550px;
+object-fit: cover;
+transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+filter: grayscale(15%);
+}
+.product-item:hover .product-img {
+transform: scale(1.04);
+filter: grayscale(0%);
+}
+.product-meta {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+margin-bottom: 0.8rem;
+border-bottom: 1px solid #EEE;
+padding-bottom: 0.8rem;
+}
+.product-title {
+font-size: 2rem;
+color: var(--dark);
+}
+.product-type {
+font-size: 0.8rem;
+text-transform: uppercase;
 
-        nav a:hover {
-            color: var(--accent);
-        }
+letter-spacing: 2px;
+color: var(--gold);
+font-weight: 600;
+}
+.product-desc {
+font-size: 0.95rem;
+color: #555;
+font-weight: 300;
+}
+/* Cierre de Alta Costura / Reserva */
+.cta-luxury {
+background-color: var(--gray-light);
+padding: 10rem 2rem;
+text-align: center;
+border-top: 1px solid #EEE;
+}
+.cta-luxury h2 {
+font-size: 3.5rem;
+margin-bottom: 1.5rem;
+}
+.cta-luxury p {
+max-width: 600px;
+margin: 0 auto 3rem;
+font-weight: 300;
+color: #666;
+letter-spacing: 1px;
+}
+/* Footer */
+footer {
+background-color: var(--dark);
+color: var(--text-muted);
+text-align: center;
+padding: 4rem 2rem;
+font-size: 0.8rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+/* Responsive */
+@media (max-width: 992px) {
+.grid-luxury { grid-template-columns: 1fr; gap: 4rem; }
+.hero h1 { font-size: 3.5rem; }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            color: var(--light);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--primary);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #c69363;
-            transform: translateY(-2px);
-        }
-
-        /* Seccion Sobre Nosotros */
-        .about {
-            padding: 5rem 2rem;
-            text-align: center;
-            background-color: var(--light);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #555;
-        }
-
-        /* Seccion Menú/Productos */
-        .menu-section {
-            padding: 5rem 2rem;
-        }
-
-        .menu-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 3rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-img {
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .card-text {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* CTA Final */
-        .cta-final {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .cta-final h2 {
-            font-size: 2.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-final p {
-            margin-bottom: 2rem;
-            color: var(--light);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #777;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { flex-direction: column; gap: 1rem; }
-            nav a { margin: 0 1rem; }
-        }
-    </style>
+header { padding: 1.5rem 2rem; }
+.product-img { height: 400px; }
+}
+</style>
 </head>
 <body>
+<!-- Cabecera Minimalista -->
+<header>
+<a href="#" class="logo">Origen&Terroir</a>
+<nav>
+<a href="#manifiesto">El Manifiesto</a>
+<a href="#coleccion">La Colección</a>
+</nav>
+</header>
+<!-- Hero Section Editorial -->
+<section class="hero">
+<h1>La Alta Costura del <br><i>Café de Especialidad</i></h1>
+<p>Un santuario sensorial privado en el corazón de Santa Cruz de Tenerife. Donde las
+cosechas de parcelas limitadas del mundo se fusionan con la vanguardia de la repostería
+artesana.</p>
+<a href="#coleccion" class="btn-luxury">Explorar la Colección</a>
+</section>
+<!-- Sección Storytelling -->
+<section id="manifiesto" class="storytelling">
+<div class="container">
+<span class="subtitle">Nuestro Manifiesto</span>
+<h2>No servimos café. <br>Embotellamos el tiempo y la tierra.</h2>
+<p>"Seleccionamos únicamente granos con puntuación superior a 88 puntos SCA,
+tostados con precisión matemática para liberar los aceites esenciales de la fruta. Cada tarta es
+una pieza arquitectónica efímera, diseñada para equilibrar y potenciar las notas de cata de
+nuestras tazas preciosas."</p>
+</div>
+</section>
+<!-- Colección de Productos (El Menú Boutique) -->
+<section id="coleccion" class="menu-section">
+<div class="section-header">
+<span>Ediciones Limitadas</span>
+<h2>La Carta de Temporada</h2>
+</div>
+<div class="grid-luxury">
 
-    <!-- Navegación -->
-    <header>
-        <div class="logo">Molienda & Trigo</div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#filosofia">Filosofía</a>
-            <a href="#carta">La Carta</a>
-        </nav>
-    </header>
+<div class="product-item">
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <h1>Café con Alma, Tartas con Historia</h1>
-        <p>Descubre nuestro espacio en el corazón de Santa Cruz de Tenerife. Granos seleccionados de los mejores orígenes del mundo y repostería horneada cada mañana.</p>
-        <a href="#carta" class="btn">Ver Especialidades</a>
-    </section>
+<div class="image-wrapper">
+<img
 
-    <!-- Filosofía / Propuesta de valor -->
-    <section id="filosofia" class="about">
-        <div class="container">
-            <h2>El secreto está en el origen</h2>
-            <p>En Molienda & Trigo no solo servimos café; honramos el trabajo de pequeños caficultores de Etiopía, Colombia y Brasil. Cada taza se muele al instante y se infusiona con precisión. Para acompañar, nuestras tartas artesanales recuperan las recetas de siempre con un toque contemporáneo.</p>
-        </div>
-    </section>
+src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&
+q=80&w=700" alt="Geisha de Panamá" class="product-img">
+</div>
+<div class="product-meta">
+<h3 class="product-title">Panamá Geisha Reserve</h3>
+<span class="product-type">Micro-Lote</span>
+</div>
+<p class="product-desc">Considerado una joya botánica. Cultivado a 1.900 metros
+de altitud, ofrece notas sublimes a jazmín, bergamota y té blanco. Servido exclusivamente en
+copa de cristal fino para maximizar la oxigenación.</p>
+</div>
 
-    <!-- Catálogo de Productos Destacados -->
-    <section id="carta" class="menu-section class container">
-        <h2>Nuestras Especialidades</h2>
-        <div class="grid">
-            
-            <!-- Tarjeta 1: Café Origen -->
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500');"></div>
-                <div class="card-content">
-                    <div class="card-title">
-                        <span>Etiopía Yirgacheffe</span>
-                    </div>
-                    <p class="card-text">Café de especialidad con notas florales, cítricas y un cuerpo ligero. Perfecto para los amantes del café de filtro y los paladares más exigentes.</p>
-                </div>
-            </div>
+<div class="product-item">
+<div class="image-wrapper">
+<img
 
-            <!-- Tarjeta 2: Tarta -->
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=500');"></div>
-                <div class="card-content">
-                    <div class="card-title">
-                        <span>Tarta de Zanahoria Real</span>
-                    </div>
-                    <p class="card-text">Nuestra tarta estrella. Bizcocho jugoso con especias seleccionadas, nueces crujientes y un suave frosting de queso crema artesanal.</p>
-                </div>
-            </div>
+src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop
+&q=80&w=700" alt="Éclat de Chocolat" class="product-img">
+</div>
+<div class="product-meta">
+<h3 class="product-title">Éclat de Chocolat Valrhona</h3>
+<span class="product-type">Alta Pastelería</span>
+</div>
+<p class="product-desc">Estructura geométrica elaborada con chocolate de origen
+único de Madagascar (74%). Capas fluidas de praliné de avellanas del Piamonte y una textura
+crujiente de oro comestible de 24 quilates.</p>
+</div>
 
-            <!-- Tarjeta 3: Café Flat White -->
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&q=80&w=500');"></div>
-                <div class="card-content">
-                    <div class="card-title">
-                        <span>Flat White Perfecto</span>
-                    </div>
-                    <p class="card-text">Doble shot de espresso de origen (Blend de la casa) combinado con leche vaporizada a la temperatura ideal para lograr una textura sedosa.</p>
-                </div>
-            </div>
+<div class="product-item">
+<div class="image-wrapper">
+<img
 
-            <!-- Tarjeta 4: Tarta Queso -->
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1524351199679-46cddf530c04?auto=format&fit=crop&q=80&w=500');"></div>
-                <div class="card-content">
-                    <div class="card-title">
-                        <span>Tarta de Queso Tostada</span>
-                    </div>
-                    <p class="card-text">Al estilo tradicional, con un corazón increíblemente cremoso y una superficie tostada que potencia todos sus matices.</p>
-                </div>
-            </div>
+src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&
+q=80&w=700" alt="Cold Brew Elixir" class="product-img">
+</div>
+<div class="product-meta">
+<h3 class="product-title">Kyoto Cold Drip Elixir</h3>
+<span class="product-type">Extracción Lenta</span>
+</div>
+<p class="product-desc">Un proceso de infusión gota a gota durante 18 horas
+utilizando agua purificada por gravedad. El resultado es un destilado denso, sedoso y dulce,
+con notas pronunciadas a licor de cacao y fruta madura.</p>
+</div>
 
-        </div>
-    </section>
+<div class="product-item">
 
-    <!-- Llamada a la acción final -->
-    <section class="cta-final">
-        <div class="container">
-            <h2>¿Te apetece una pausa?</h2>
-            <p>Te esperamos en el centro de Santa Cruz de Tenerife para ofrecerte una experiencia gastronómica única.</p>
-            <span class="btn" style="background-color: var(--white); color: var(--primary);">Abierto de Lunes a Sábado</span>
-        </div>
-    </section>
+<div class="image-wrapper">
+<img
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Molienda & Trigo. Diseñado para porfolio de Zenpyme.</p>
-    </footer>
-
+src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&
+q=80&w=700" alt="Velvet de Pistacho y Frambuesa" class="product-img">
+</div>
+<div class="product-meta">
+<h3 class="product-title">Velvet de Pistacho & Frambuesa</h3>
+<span class="product-type">Alta Pastelería</span>
+</div>
+<p class="product-desc">Mousse de pistacho puro de Bronte (Sicilia), núcleo fluido
+de frambuesas silvestres frescas recolectadas a mano y base sablée de almendras. Un
+equilibrio perfecto de acidez y cremosidad.</p>
+</div>
+</div>
+</section>
+<!-- Cierre de Alta Conversión Emocional -->
+<section class="cta-luxury">
+<h2>Viva la Experiencia Rigurosa</h2>
+<p>Le invitamos a descubrir un espacio de silencio, diseño y sabor absoluto. Diseñado
+para quienes aprecian los detalles imperceptibles.</p>
+<span class="btn-luxury" style="background-color: var(--dark); color: var(--white);
+border-color: var(--dark);">Un universo exclusivo en Santa Cruz</span>
+</section>
+<!-- Footer de Marca -->
+<footer>
+<p>© 2026 Origen & Terroir. Desarrollado con excelencia técnica por Zenpyme.</p>
+</footer>
 </body>
 </html>
