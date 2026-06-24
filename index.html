@@ -62,10 +62,6 @@
             text-decoration: none;  
         }  
   
-        .logo span {  
-            color: var(--gold);  
-        }  
-  
         nav a {  
             text-decoration: none;  
             color: var(--white);  
@@ -128,7 +124,7 @@
             letter-spacing: 3px;  
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);  
             background: transparent;  
-            cursor: pointer;
+            cursor: pointer;  
         }  
   
         .btn-luxury:hover {  
@@ -179,11 +175,11 @@
             background-color: var(--white);  
         }  
   
-        .container-menu {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        .container-menu {  
+            max-width: 1200px;  
+            margin: 0 auto;  
+        }  
+  
         .section-header {  
             text-align: center;  
             margin-bottom: 7rem;  
@@ -262,9 +258,111 @@
             font-weight: 300;  
         }  
   
+        /* Nueva Sección de Reseñas Premium */  
+        .reviews-section {  
+            background-color: var(--gray-light);  
+            padding: 10rem 4rem;  
+            border-top: 1px solid #EEE;  
+        }  
+  
+        .reviews-grid {  
+            display: grid;  
+            grid-template-columns: repeat(3, 1fr);  
+            gap: 3rem;  
+            max-width: 1200px;  
+            margin: 0 auto;  
+        }  
+  
+        .review-card {  
+            background-color: var(--white);  
+            padding: 3rem 2.5rem;  
+            border: 1px solid rgba(17, 17, 17, 0.05);  
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);  
+            display: flex;  
+            flex-direction: column;  
+            justify-content: space-between;  
+        }  
+  
+        .stars {  
+            color: var(--gold);  
+            font-size: 0.9rem;  
+            letter-spacing: 2px;  
+            margin-bottom: 1.5rem;  
+        }  
+  
+        .review-text {  
+            font-family: 'Cormorant Garamond', serif;  
+            font-size: 1.4rem;  
+            font-style: italic;  
+            line-height: 1.5;  
+            color: var(--dark);  
+            margin-bottom: 2rem;  
+        }  
+  
+        .review-author {  
+            font-size: 0.8rem;  
+            text-transform: uppercase;  
+            letter-spacing: 2px;  
+            font-weight: 600;  
+            color: var(--text-muted);  
+        }  
+  
+        /* Nueva Sección de Ubicación / Mapa */  
+        .location-section {  
+            background-color: var(--dark);  
+            color: var(--white);  
+            display: grid;  
+            grid-template-columns: 1fr 1fr;  
+            align-items: center;  
+        }  
+  
+        .location-info {  
+            padding: 8rem 6rem;  
+        }  
+  
+        .location-info span {  
+            color: var(--gold);  
+            text-transform: uppercase;  
+            letter-spacing: 3px;  
+            font-size: 0.85rem;  
+            display: block;  
+            margin-bottom: 1rem;  
+        }  
+  
+        .location-info h2 {  
+            font-size: 3.5rem;  
+            margin-bottom: 2rem;  
+            line-height: 1.2;  
+        }  
+  
+        .location-info p {  
+            font-weight: 300;  
+            color: #CCC;  
+            margin-bottom: 2rem;  
+            max-width: 450px;  
+        }  
+  
+        .map-container {  
+            width: 100%;  
+            height: 100%;  
+            min-height: 550px;  
+            position: relative;  
+        }  
+  
+        /* Integración estética del mapa con tonos de lujo */  
+        .map-container iframe {  
+            width: 100%;  
+            height: 100%;  
+            border: 0;  
+            position: absolute;  
+            top: 0;  
+            left: 0;  
+            filter: grayscale(100%) invert(92%) contrast(105%); /* Sofisticación visual oscura */  
+        }  
+  
         /* Cierre de Alta Conversión */  
         .cta-luxury {  
-            background-color: var(--gray-light);  
+            background-color: var(--white);  
             padding: 10rem 2rem;  
             text-align: center;  
             border-top: 1px solid #EEE;  
@@ -298,12 +396,16 @@
         /* Responsive Design */  
         @media (max-width: 992px) {  
             .grid-luxury { grid-template-columns: 1fr; gap: 4rem; }  
+            .reviews-grid { grid-template-columns: 1fr; gap: 2rem; }  
+            .location-section { grid-template-columns: 1fr; }  
+            .location-info { padding: 4rem 2rem; }  
+            .map-container { min-height: 400px; }  
             .hero h1 { font-size: 3.2rem; }  
             header { padding: 1.5rem 2rem; flex-direction: column; gap: 1rem; }  
-            nav a { margin: 0 1rem; }
+            nav a { margin: 0 1rem; }  
             .product-img { height: 400px; }  
-            .menu-section { padding: 6rem 2rem; }
-            .section-header h2 { font-size: 2.8rem; }
+            .menu-section, .reviews-section { padding: 6rem 2rem; }  
+            .section-header h2 { font-size: 2.8rem; }  
         }  
     </style>  
 </head>  
@@ -315,6 +417,8 @@
         <nav>  
             <a href="#manifiesto">El Manifiesto</a>  
             <a href="#coleccion">La Colección</a>  
+            <a href="#experiencias">Experiencias</a>  
+            <a href="#encuentranos">Encuéntranos</a>  
         </nav>  
     </header>  
   
@@ -336,7 +440,7 @@
   
     <!-- Colección de Productos Destacados -->  
     <section id="coleccion" class="menu-section">  
-        <div class="container-menu">
+        <div class="container-menu">  
             <div class="section-header">  
                 <span>Ediciones Limitadas</span>  
                 <h2>La Carta de Temporada</h2>  
@@ -344,7 +448,7 @@
       
             <div class="grid-luxury">  
                   
-                <!-- Producto 1 -->
+                <!-- Producto 1 -->  
                 <div class="product-item">  
                     <div class="image-wrapper">  
                         <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Panamá Geisha Reserve" class="product-img">  
@@ -356,7 +460,7 @@
                     <p class="product-desc">Considerado una joya botánica. Cultivado a 1.900 metros de altitud, ofrece notas sublimes a jazmín, bergamota y té blanco. Servido exclusivamente en copa de cristal fino para maximizar la oxigenación.</p>  
                 </div>  
       
-                <!-- Producto 2 -->
+                <!-- Producto 2 -->  
                 <div class="product-item">  
                     <div class="image-wrapper">  
                         <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Éclat de Chocolat" class="product-img">  
@@ -368,7 +472,7 @@
                     <p class="product-desc">Estructura geométrica elaborada con chocolate de origen único de Madagascar (74%). Capas fluidas de praliné de avellanas del Piamonte y una textura crujiente de oro comestible de 24 quilates.</p>  
                 </div>  
       
-                <!-- Producto 3 -->
+                <!-- Producto 3 -->  
                 <div class="product-item">  
                     <div class="image-wrapper">  
                         <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Kyoto Cold Drip Elixir" class="product-img">  
@@ -380,7 +484,7 @@
                     <p class="product-desc">Un proceso de infusión gota a gota durante 18 horas utilizando agua purificada por gravedad. El resultado es un destilado denso, sedoso y dulce, con notas pronunciadas a licor de cacao y fruta madura.</p>  
                 </div>  
       
-                <!-- Producto 4 -->
+                <!-- Producto 4 -->  
                 <div class="product-item">  
                     <div class="image-wrapper">  
                         <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&amp;fit=crop&amp;q=80&amp;w=700" alt="Velvet de Pistacho y Frambuesa" class="product-img">  
@@ -393,7 +497,54 @@
                 </div>  
       
             </div>  
-        </div>
+        </div>  
+    </section>  
+  
+    <!-- Nueva Sección de Reseñas / Prueba Social Premium -->  
+    <section id="experiencias" class="reviews-section">  
+        <div class="container-menu">  
+            <div class="section-header">  
+                <span>Críticas &amp; Experiencias</span>  
+                <h2>El veredicto de los sibaritas</h2>  
+            </div>  
+  
+            <div class="reviews-grid">  
+                <!-- Reseña 1 -->  
+                <div class="review-card">  
+                    <div class="stars">★★★★★</div>  
+                    <p class="review-text">"El lote de Geisha panameño servido a temperatura de cata cambió por completo mi percepción del café. La tarta de pistacho es pura ingeniería de sabor."</p>  
+                    <span class="review-author">Alejandro V. — Crítico Gastronómico</span>  
+                </div>  
+  
+                <!-- Reseña 2 -->  
+                <div class="review-card">  
+                    <div class="stars">★★★★★</div>  
+                    <p class="review-text">"Un rincón de puro minimalismo internacional en Tenerife. El cold drip de 18 horas tiene una densidad licorosa impecable."</p>  
+                    <span class="review-author">Helena R. — Diseñadora de Interiores</span>  
+                </div>  
+  
+                <!-- Reseña 3 -->  
+                <div class="review-card">  
+                    <div class="stars">★★★★★</div>  
+                    <p class="review-text">"El chocolate de Madagascar es de otra galaxia. Textura, brillo y equilibrio de amargor insuperables. Hacía falta un concepto así aquí."</p>  
+                    <span class="review-author">Marcos T. — Consultor Senior</span>  
+                </div>  
+            </div>  
+        </div>  
+    </section>  
+  
+    <!-- Nueva Sección de Ubicación con Mapa Sincronizado -->  
+    <section id="encuentranos" class="location-section">  
+        <div class="location-info">  
+            <span>El Espacio Privado</span>  
+            <h2>Donde el tiempo se detiene</h2>  
+            <p>Ubicados estratégicamente en el distrito histórico e inspirador de Santa Cruz de Tenerife, nuestro local está diseñado bajo premisas de arquitectura acústica y visual minimalista.</p>  
+            <p>Un refugio alejado del bullicio para concentrarse exclusivamente en las propiedades organolépticas de la materia prima.</p>  
+        </div>  
+        <div class="map-container">  
+            <!-- Google Maps con centro en Santa Cruz de Tenerife -->  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14359.711867160751!2d-16.2625299!3d28.4636294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc41cc05256e6d1f%3A0x6b4458f335b71946!2sSanta%20Cruz%20de%20Tenerife!5e0!3m2!1ses!2ses!4v1719273600000!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+        </div>  
     </section>  
   
     <!-- Cierre Emocional de Conversión -->  
