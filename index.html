@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molienda & Trigo | Café de Especialidad en Santa Cruz</title>
+    <style>
+        /* Variables de diseño - Paleta Cálida y Moderna */
+        :root {
+            --primary: #4A3525; /* Marrón café oscuro */
+            --accent: #D4A373;  /* Tono tostado/crema */
+            --light: #FAEDCD;   /* Fondo suave */
+            --dark: #1E1E1E;    /* Texto principal */
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--white);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            color: var(--light);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #c69363;
+            transform: translateY(-2px);
+        }
+
+        /* Seccion Sobre Nosotros */
+        .about {
+            padding: 5rem 2rem;
+            text-align: center;
+            background-color: var(--light);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Seccion Menú/Productos */
+        .menu-section {
+            padding: 5rem 2rem;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-final p {
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #777;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <div class="logo">Molienda & Trigo</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#filosofia">Filosofía</a>
+            <a href="#carta">La Carta</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <h1>Café con Alma, Tartas con Historia</h1>
+        <p>Descubre nuestro espacio en el corazón de Santa Cruz de Tenerife. Granos seleccionados de los mejores orígenes del mundo y repostería horneada cada mañana.</p>
+        <a href="#carta" class="btn">Ver Especialidades</a>
+    </section>
+
+    <!-- Filosofía / Propuesta de valor -->
+    <section id="filosofia" class="about">
+        <div class="container">
+            <h2>El secreto está en el origen</h2>
+            <p>En Molienda & Trigo no solo servimos café; honramos el trabajo de pequeños caficultores de Etiopía, Colombia y Brasil. Cada taza se muele al instante y se infusiona con precisión. Para acompañar, nuestras tartas artesanales recuperan las recetas de siempre con un toque contemporáneo.</p>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos Destacados -->
+    <section id="carta" class="menu-section class container">
+        <h2>Nuestras Especialidades</h2>
+        <div class="grid">
+            
+            <!-- Tarjeta 1: Café Origen -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>Etiopía Yirgacheffe</span>
+                    </div>
+                    <p class="card-text">Café de especialidad con notas florales, cítricas y un cuerpo ligero. Perfecto para los amantes del café de filtro y los paladares más exigentes.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Tarta -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>Tarta de Zanahoria Real</span>
+                    </div>
+                    <p class="card-text">Nuestra tarta estrella. Bizcocho jugoso con especias seleccionadas, nueces crujientes y un suave frosting de queso crema artesanal.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Café Flat White -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>Flat White Perfecto</span>
+                    </div>
+                    <p class="card-text">Doble shot de espresso de origen (Blend de la casa) combinado con leche vaporizada a la temperatura ideal para lograr una textura sedosa.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Tarta Queso -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1524351199679-46cddf530c04?auto=format&fit=crop&q=80&w=500');"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span>Tarta de Queso Tostada</span>
+                    </div>
+                    <p class="card-text">Al estilo tradicional, con un corazón increíblemente cremoso y una superficie tostada que potencia todos sus matices.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Llamada a la acción final -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>¿Te apetece una pausa?</h2>
+            <p>Te esperamos en el centro de Santa Cruz de Tenerife para ofrecerte una experiencia gastronómica única.</p>
+            <span class="btn" style="background-color: var(--white); color: var(--primary);">Abierto de Lunes a Sábado</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Molienda & Trigo. Diseñado para porfolio de Zenpyme.</p>
+    </footer>
+
+</body>
+</html>
